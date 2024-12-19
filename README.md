@@ -44,11 +44,11 @@ This project is currently in the **planning phase**, and no code has been writte
 ## **Goals of the Project**
 
 1. **Lightweight**:
-   - Build a terminal-based productivity tool that doesn't rely on a GUI environment.
+   - A terminal-based productivity tool that doesn't rely on a GUI environment.
 2. **Cross-Platform**:
-   - Ensure compatibility with Linux, Windows, and macOS.
+   - Compatible with Linux, Windows, and macOS.
 3. **Distraction-Free**:
-   - Offer a minimalist interface to maximize focus.
+   - Minimalist interface to maximize focus.
 
 ---
 
