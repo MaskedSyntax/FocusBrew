@@ -1,5 +1,3 @@
-#!/bin/python3
-
 # Importing Libraries
 import tkinter as tk
 from tkinter import Tk
@@ -8,11 +6,21 @@ from tkinter import font
 from PIL import Image, ImageTk
 import tkinter.messagebox as tmsg
 import time
+import argparse
 
 from playsound import playsound
 
 background_path = r'assets/spaceship_art_fiction.jpg'
 bg_music_path = r'assets/spiderman-meme-song.mp3'
+
+parser = argparse.ArgumentParser(description="Example program with flags")
+parser.add_argument("--tt", type=int, help="Total Focus Time for Pomodoro", required=True)
+parser.add_argument("--br", type=int, help="Break Time", required=True)
+
+args = parser.parse_args()
+
+print(f"Total Focus Time: {args.tt}")
+print(f"Break Time: {args.br}")
 
 class Pomodoro:
     def __init__(self, root):
@@ -28,7 +36,7 @@ class Pomodoro:
         time.sleep(1)
         
     def work(self):
-        self.timer = 50*60
+        self.timer = args.tt*60
         while self.timer >= 0:
             pomo.work_break(self.timer)
             if self.timer == 0:
@@ -37,7 +45,7 @@ class Pomodoro:
             self.timer -= 1
 
     def break_(self):
-        self.timer = 10*60
+        self.timer = args.br*60
         while self.timer >= 0:
             pomo.work_break(self.timer)
             if self.timer == 0:
@@ -57,7 +65,7 @@ class Pomodoro:
 
         # Labels
         self.min = tk.StringVar(self.root)
-        self.min.set("50")
+        self.min.set(args.tt)
         self.sec = tk.StringVar(self.root)
         self.sec.set("00")
 
