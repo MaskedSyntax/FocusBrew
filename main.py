@@ -62,6 +62,7 @@ class Pomodoro:
         self.root.geometry("200x200")
         self.root.resizable(False, False)
         self.root.title("Pomodoro Timer")
+        self.root.configure(bg="black")
 
         # Labels
         self.min = tk.StringVar(self.root)
@@ -76,17 +77,17 @@ class Pomodoro:
         self.sec_label.pack()
 
         # add background image for GUI using Canvas widget
-        canvas = tk.Canvas(self.root)
-        canvas.pack(expand=True, fill="both")
-        img = Image.open(background_path)
-        bg = ImageTk.PhotoImage(img)
-        canvas.create_image(0, 0, image=bg, anchor="nw")
+        # canvas = tk.Canvas(self.root)
+        # canvas.pack(expand=True, fill="both")
+        # img = Image.open(background_path)
+        # bg = ImageTk.PhotoImage(img)
+        # canvas.create_image(0, 0, image=bg, anchor="nw")
 
         # create three buttons with countdown function command
         btn_work = tk.Button(self.root, text="Start", bd=5, command=self.work,
-                             bg="black", fg="white", font=("JetBrains Mono", 15, "bold")).place(x=67, y=80)
+                             fg="black", bg="white", font=("JetBrains Mono", 15, "bold")).place(x=67, y=80)
         btn_break = tk.Button(self.root, text="Break", bd=5, command=self.break_,
-                              bg="black", fg="white", font=("JetBrains Mono", 15, "bold")).place(x=67, y=140)
+                              fg="black", bg="white", font=("JetBrains Mono", 15, "bold")).place(x=67, y=140)
 
         self.root.protocol("WM_DELETE_WINDOW", self.close)
 
