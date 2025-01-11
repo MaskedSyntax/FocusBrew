@@ -59,7 +59,7 @@ class Pomodoro:
 
     def main(self):
         # GUI window configuration
-        self.root.geometry("450x450")
+        self.root.geometry("200x200")
         self.root.resizable(False, False)
         self.root.title("Pomodoro Timer")
 
@@ -84,9 +84,9 @@ class Pomodoro:
 
         # create three buttons with countdown function command
         btn_work = tk.Button(self.root, text="Start", bd=5, command=self.work,
-                             bg="red", font=("JetBrains Mono", 15, "bold")).place(x=140, y=380)
+                             bg="black", fg="white", font=("JetBrains Mono", 15, "bold")).place(x=67, y=80)
         btn_break = tk.Button(self.root, text="Break", bd=5, command=self.break_,
-                              bg="red", font=("JetBrains Mono", 15, "bold")).place(x=240, y=380)
+                              bg="black", fg="white", font=("JetBrains Mono", 15, "bold")).place(x=67, y=140)
 
         self.root.protocol("WM_DELETE_WINDOW", self.close)
 
